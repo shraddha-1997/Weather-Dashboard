@@ -1,0 +1,608 @@
+
+html,body {
+  font-family: Arial, sans-serif;
+  background: #444444 !important;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.form-check-input {
+  width: 45px !important; 
+  height: 7px !important; 
+  transform: scale(1.3);
+  
+}
+ 
+.dark-txt{
+  margin-left: -7px;
+  padding: 0%;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+
+
+.container {
+  /* max-width: 1200px; */
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-right: -1000px;
+  background-color: transparent;
+}
+
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f;
+  padding: 10px;
+  border-radius: 8px;
+  padding-top: 30px;
+}
+
+
+.switch{
+  margin-left: 50px;
+}
+
+
+input, button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+
+#cityInput{
+  width:70%;
+  height: 45px;
+  margin-left: 50px;
+  margin-right: 80px;
+  background-color: #444444;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+
+}
+
+
+
+.search-btn {
+  background: #444444;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-left: -115px;
+}
+
+
+.search-img{
+  height: 20px;
+  width: 20px;
+}
+
+
+
+
+#locationBtn{
+  font-size: 15px;
+  /* padding: 7px; */
+  margin: 5px;
+  /* margin-left: -7px; */
+  border-radius: 50px;
+  background-color: #4CBB17;
+}
+
+
+
+
+.dashboard {
+  display: grid;
+  gap: 20px;
+}
+
+
+.R1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.clock-card, .weather-card {
+  background: #444444; /* Dark mode */
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(109, 199, 252, 0.918)!important;
+  width: 50%; /* Ensures only 2 cards per row */
+  min-width: 300px;
+  position: relative;
+z-index: 10; /* Ensures it's above background elements */
+display: block;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: auto auto; /* Two rows */
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.forecast-box, .hourly-box {
+  background: #444444;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  min-height: 150px;
+  box-shadow: 5px 5px 15px #6dc7fc; /* Same color without transparency */
+
+}
+
+
+/* Ensures responsiveness */
+@media (max-width: 768px) {
+  .clock-card, .weather-card {
+    width: 100%; /* Stacks them on smaller screens */
+  }
+}
+
+
+.current-weather {
+  display: flex;  /* Enables Flexbox */
+  flex-direction: row;  /* Align items horizontally */
+  justify-content: space-between; /* Distributes space */
+  align-items: center; /* Centers vertically */
+  width: 780px; /* Matches your reference */
+  /* height: 330px; */
+  background: #444444;
+  border-radius: 30px;
+  padding: 20px;
+  position: relative; /* If needed */ 
+    flex-wrap: wrap; /* Allows content to wrap if needed */
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 15px #6dc7fc; /* Same color without transparency */
+
+    
+}
+
+
+
+.weather-right {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Two equal columns */
+  gap: 15px 40px; /* Adjust spacing */
+  text-align: left; /* Align text properly */
+}
+
+
+@media (max-width: 768px) {
+  .weather-right {
+    grid-template-columns: 1fr; /* Stack items in one column */
+  }
+  
+  .current-weather {
+    flex-direction: column; /* Stack elements */
+    align-items: center;
+  }
+}
+
+
+
+.current-weather, .forecast, .hourly {
+  background: #444444;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#fiveDayForecast, #hourlyForecast {
+  display: flex;
+  justify-content: space-around;
+}
+
+.forecast-item, .hourly-item {
+  background: #444444;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+#cityName{
+  /* font-family: poppins; */
+  font-size: 37px;
+  font-weight: bold;
+}
+
+#clock-time{
+  font-size: 77px;
+  font-weight: bold;
+}
+
+#clock-date{
+  font-size: 18px;
+}
+
+
+
+h1{
+  font-size: 67px;
+  font-weight: bold;
+}
+
+.feel{
+  font-size: 15px;
+}
+
+#feelsLike{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+
+.sunrise-set {
+  display: flex;
+  align-items: center;
+  gap: 11px;  /* Just enough space between icon & text */
+  margin-left: 20px;
+}
+
+.sun-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;  /* A little breathing room but not excessive */
+}
+
+.sun-text p, 
+.sun-text span {
+  margin: 2px 0;  /* Minimal spacing between text */
+  font-size: 13px;  /* Standard size so it looks clean */
+}
+
+
+
+
+
+/* 5days forecast and hourely */
+/* 5-Day Forecast Styling */
+#fiveDayForecast {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #444444;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.forecast-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.forecast-item img {
+  width: 45px;
+
+}
+
+.forecast-item .temp {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.forecast-item .date {
+  font-size: 15px;
+  text-align: right;
+}
+
+/* Hourly Forecast Styling */
+#hourlyForecast {
+  display: flex;
+  gap: 10px;
+  background: #444444;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: #444444;
+  border-radius: 8px;
+  color: #fff;
+  width: 80px;
+}
+
+.hourly-item img {
+  width: 55px!important;
+}
+
+.hourly-item .time {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hourly-item .temp {
+  font-size: 15px !important;
+  font-weight: bold;
+}
+
+.hourly-item .wind {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.wind-icon {
+  width: 25px;
+  margin-top: 5px;
+}
+
+#fiveDayForecast {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hourly-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #444444;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #6dc7fc; /* Same color without transparency */
+  min-height: 150px;
+  width: 100%;
+}
+
+#hourlyForecast {
+  display: flex;
+  justify-content: space-between; /* Space them evenly */
+  gap: 30px; /* Reduce gap between items */
+  padding: 35px;
+  border-radius: 10px;
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+  white-space: nowrap;
+  
+  /* background-color: red; */
+}
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background: #3a3a3a; /* Darker background for contrast */
+  border-radius: 10px;
+  color: white;
+  min-width: 130px;
+  /* max-width: 100px; */
+  flex: 0 0 auto; /* Prevents items from stretching */
+  text-align: center;
+  /* background-color: palevioletred; */
+  font-weight: 900;
+}
+
+.hourly-item img {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 5px;
+}
+
+.hourly-item .time {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hourly-item .temp {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hourly-item .wind {
+  font-size: 12px;
+  color: white;
+}
+
+
+
+.hourly-item img {
+  width: 40px; /* Proper size */
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+.curicon{
+height: 35px;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES  */
+
+
+/* ✅ Center Everything on Mobile & Tablet */
+@media (max-width: 992px) {
+  .dashboard {
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 20px;
+      min-height: auto;
+  }
+
+  .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 🔥 Center content */
+      width: 100%;
+  }
+
+  .clock-card, .current-weather, .forecast-box, .hourly-box {
+      width: 90% !important;  /* 🔥 Force center alignment */
+      max-width: 400px;  /* Adjust width */
+      text-align: center;
+  }
+
+  /* ✅ Forecast Items in Center */
+  #fiveDayForecast {
+      justify-content: center;
+  }
+
+  .forecast-item {
+      margin: 5px; /* Add spacing */
+  }
+
+  #hourlyForecast {
+    display: flex;
+    flex-direction: column; /* 🔥 Stack items vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    overflow-x: hidden; /* Hide horizontal scroll */
+}
+
+/* 🔥 Make each hourly item take full width */
+.hourly-item {
+    width: 90%; /* Almost full width */
+    max-width: 300px; /* Prevent stretching too much */
+    text-align: center;
+}
+}
+
+
+
+@media (max-width: 768px) {
+  /* 🔥 Center the entire hourly forecast container */
+  #hourlyForecast {
+      display: flex;
+      flex-direction: column; /* 🔥 Stack items vertically */
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      overflow-x: hidden; /* Hide horizontal scroll */
+  }
+
+  /* 🔥 Make each hourly item take full width */
+  .hourly-item {
+      width: 90%; /* Almost full width */
+      max-width: 300px; /* Prevent stretching too much */
+      text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #fiveDayForecast {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      overflow-x: hidden; /* 🔥 Ensures no horizontal overflow */
+  }
+
+  .forecast-item {
+      width: 90%; /* Makes forecast items adjust properly */
+      max-width: 300px; /* Prevents them from stretching too much */
+      text-align: center;
+      padding: 10px; /* Gives space inside */
+  }
+}
+
+
+
+
+
+@media (min-width: 992px) and (max-width: 1400px) {
+  .dashboard {
+      max-width: 95%;
+      margin: auto;
+  }
+  
+.clock-card{
+  /* margin-left: 100px; */
+  margin-top: 130px;
+  width: 100%;
+}
+.current-weather {
+  width: 550px;
+  margin-top: 130px;
+}
+
+
+  .row {
+      width: 100%;
+      margin: auto;
+      gap: 15px; /* Adjusted spacing to prevent overlap */
+  }
+
+  .col-md-5, .col-md-6, .col-md-12 {
+      padding: 10px; /* Adds a bit of spacing */
+  }
+
+  /* Fix hourly forecast overflow */
+  #hourlyForecast {
+      gap: 8px; /* Slightly reduce spacing between hourly items */
+      overflow-x: hidden; /* Stops horizontal scrolling */
+      justify-content: center;
+  }
+
+  .hourly-item {
+      min-width: 100px; /* Prevents shrinking too much */
+      max-width: 130px;
+  }
+}
+
+
+
+/* light mmode */
+
+
+

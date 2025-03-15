@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+     
+  <div class="container-fluid">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <label class="switch">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="darkModeToggle" checked>
+        </div>
+        <label class="form-check-label dark-txt" for="darkModeToggle">Dark Mode</label>
+      </label>
+
+      <!-- Search Bar -->
+      <input type="text" id="cityInput" placeholder="Search for your preffered city...">
+      <button class="search-btn" onclick="getWeather()"> <img src="assets/search.png" class="search-img"> </button>
+      <button id="locationBtn">
+        <i class='fas fa-crosshairs' style='font-size:20px'></i>
+        Current Location
+      </button>
+    </div>
+
+    <!-- Weather Dashboard -->
+    <div class="dashboard align-items-center vh-100 bg-dark">
+      <div class="row justify-content-center gap-4">
+    
+        <!-- Clock Box -->
+        <div class="col-md-5 clock-card">
+          <h2 id="cityName">Busan</h2>
+          <h1 id="clock-time">06:13</h1>
+          <p id="clock-date">Friday, 13 June</p>
+        </div>
+    
+        <!-- Current Weather Box -->
+        <div class="col-md-6 current-weather">
+          
+
+          <div class="weather-left">
+            <h1 id="temperature">24°C</h1>
+            <p class="feel">Feels like: <span id="feelsLike">22°C</span></p>
+        
+            <!-- Sunrise -->
+            <div class="sunrise-set">
+                <img class="curicon" src="assets/sunrise-white 1.png">
+                <div class="sun-text">
+                    <p>Sunrise</p>
+                    <span id="sunrise">06:37 AM</span>
+                </div>
+            </div>
+        
+            <!-- Sunset -->
+            <div class="sunrise-set">
+                <img class="curicon" src="assets/sunset-white 1.png">
+                <div class="sun-text">
+                    <p>Sunset</p>
+                    <span id="sunset">20:37 PM</span>
+                </div>
+            </div>
+        </div>
+        
+
+
+          <div class="weather-icon">
+            <img id="weatherIcon" src="assets/sunny.png" style="height: 155px;" alt="Weather Icon">
+            <p id="weatherDescription">Sunny</p>
+          </div>
+          <div class="weather-right">
+            <p><img class="curicon"  src="assets/humidity 1.png"> <span id="humidity">41%</span> Humidity</p>
+            <p><img class="curicon" src="assets/wind 1.png"> <span id="windSpeed">2 km/h</span> Wind Speed</p>
+            <p><img class="curicon" src="assets/pressure-white 1.png"> <span id="pressure">997 hPa</span> Pressure</p>
+            <p><img class="curicon" src="assets/uv-white 1.png"> <span id="uvIndex">8</span> UV Index</p>
+          </div>
+        </div>
+    
+        <!-- Forecast Containers -->
+        <div class="col-md-12 forecast-box">
+          <h3>5 Days Forecast:</h3>
+          <div id="fiveDayForecast"></div>
+        </div>
+    
+        <div class="col-md-5 hourly-box">
+          <h3>Hourly Forecast:</h3>
+          <div id="hourlyForecast"></div>
+        </div>
+    
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
